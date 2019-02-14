@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yc.mapper.DistrictDaoMapper">
+	<!-- 使用默认的mybatis配置  二级缓存 -->
+	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"></cache>
+	
+	<select id="listDistricts" resultType="District">
+		select * from District;
+	</select>
+	
+	<!-- <resultMap type="District" id="districtMap">
+		<id property="id" column="id" />
+		<result property="name" column="dname" />
+		
+		<collection property="streets" ofType="Street">
+ 			<result property="name" column="stname" />
+ 		</collection>
+	</resultMap>
+	
+	<select id="DistrictToStreet" parameterType="Integer" resultMap="districtMap">
+		select district.id,district.name as dname,street.name as stname
+		from district
+		left join street
+		on district.id=street.district_id
+		where district.id=#{id}
+	</select> -->
+	
+	
+	
+	
+
+	
+	
+	
+	
+</mapper>
